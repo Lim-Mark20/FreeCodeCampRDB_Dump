@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# This script allows users to guess a randomly generated number between 1 and 1000.
+# It tracks the number of guesses, interacts with a PostgreSQL database, and updates user stats.
+
 # PSQL command for connecting to the database
 PSQL="psql --username=freecodecamp --dbname=number_guess -t --no-align -c"
 
