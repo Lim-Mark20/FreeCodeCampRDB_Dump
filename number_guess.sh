@@ -31,6 +31,7 @@ while [[ $GUESS -ne $SECRET_NUMBER ]]; do
 done
 echo "You guessed it in $NUMBER_OF_GUESSES tries. The secret number was $SECRET_NUMBER. Nice job!"
 if [[ -z $USERNAME_RESULT ]]; then
+  #Insert user data for first-time players
   INSERT_RESULT=$($PSQL "INSERT INTO users (username, games_played, best_game) VALUES ('$USERNAME', 1, $NUMBER_OF_GUESSES)")
 else
   UPDATE_GAMES=$($PSQL "UPDATE users SET games_played = games_played + 1 WHERE username = '$USERNAME'")
