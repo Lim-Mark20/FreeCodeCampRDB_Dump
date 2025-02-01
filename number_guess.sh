@@ -17,6 +17,7 @@ NUMBER_OF_GUESSES=0
 GUESS=0
 while [[ $GUESS -ne $SECRET_NUMBER ]]; do
   read GUESS
+  #Invalid input
   if [[ ! $GUESS =~ ^[0-9]+$ ]]; then
     echo "That is not an integer, guess again:"
   else
